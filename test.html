@@ -1,0 +1,105 @@
+<!doctype html><html><head><style type="text/css" id="dcoder_stylesheet">#container
+{
+  border: 3px solid red;
+  width: 700px;
+  font-size: 100px;
+  text-align: center;
+  margin: auto;
+  border-radius: 100px;
+  font-family: serif;
+  animation: suhail;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes suhail
+{
+  from
+{
+  width:900px;
+  color: yellow;
+}
+
+to
+{
+  
+  width: 1000px;
+  color: blue;
+  font-family: monospace;
+  
+  
+}
+
+}
+
+
+#name
+{
+  color: blue;
+  border: 1px solid red;
+  font-family: monospace;
+  width: 250px;
+  height: 50px;
+  margin-left: 400px; 
+  text-align: center;
+}
+
+#name:hover
+{
+/*
+  color: blue;
+  border: 1px solid red;
+  background-color: none;
+  font-family: serif;
+  width: 250px;
+  height: 50px;
+  margin-left: 400px;
+  
+  */
+}</style></head> 
+ <body> 
+  <div id="container">
+    FIND DOM BASES XSS ON HERE 
+  </div> 
+  <br> 
+  <br> 
+  <br> 
+  <hr> 
+  <br> 
+  <input type="text" maxlength="30" placeholder="Enter You're Name" id="name"> 
+  <button onclick="submit()">SUBMIT</button> 
+  <p id="x"></p> 
+ 
+<script type="text/javascript" id="dcoder_script">function submit()
+{
+  
+  
+ name = document.getElementById("name").value
+ 
+if(name.length == 0)
+{
+  alert("Value Not To Be Empty")
+}
+ 
+else
+{
+  x = /[<>"']/ig;
+  
+  if(x.test(name))
+  {
+    alert("Hacking Detect (xss)")
+  }
+
+else
+{
+  
+  
+ document.getElementById("x").innerHTML = name
+
+ name = document.getElementById("name").value = ""
+
+}
+
+}
+ 
+}</script></body></html>
