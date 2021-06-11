@@ -70,7 +70,7 @@ to
   <button onclick="submit()">SUBMIT</button>
 
  
-  <a id="x" href=""CLICK HERE </a> 
+  <a id="x" href="Google.com"CLICK HERE </a> 
 
 
  
@@ -98,7 +98,9 @@ else
 {
   
   
- document.getElementById("x").href = name
+ test = document.getElementById("x");
+ 
+ test.href = name
 
  name = document.getElementById("name").value = ""
 
