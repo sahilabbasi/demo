@@ -68,7 +68,7 @@ to
   <br> 
   <input type="text" maxlength="30" placeholder="Enter You're Name" id="name"> 
   <button onclick="submit()">SUBMIT</button> 
-  <p id="x"></p> 
+  <a id="x" href=""></a> 
  
 <script type="text/javascript" id="dcoder_script">function submit()
 {
@@ -83,7 +83,7 @@ if(name.length == 0)
  
 else
 {
-  x = /[>"']/ig;
+  x = /[<"']/ig;
   
   if(x.test(name))
   {
@@ -94,7 +94,7 @@ else
 {
   
   
- document.getElementById("x").innerHTML = name
+ document.getElementById("x").href = name
 
  name = document.getElementById("name").value = ""
 
