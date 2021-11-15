@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bypass The Recapta</title>
+    <meta id="meta" name="description" content="recapta bypass google sahilabbasi tecnical sahil abbasi">
+    <link rel="shortcut icon" href="test.png" referrerpolicy="sssss" type="image/x-icon">
+  
+</head>
+
+<body bgcolor="black">
+
+    <h1 id="h1" style="text-align: center; color: gold; font-family: sans-serif;">RECAPTA FOR HACKERS </h1>
+
+    <p style="text-align: center; color: blue; font-family:monospace; font-size: 20px;">Hello! This World Most Secured
+        Recapta Which Is Made By Me (SAHLABBASI) And No One Hacked it Because I Mainly Focus On Security not A Desinging
+        So This Will Be Advantage Of It :)</br> So If You Can Hacked it We'll Happy To Give Bounty For It But I Know
+        About It That No One Can Hacked it. <b></b></p>
+
+    <div id="container">
+
+        <p style="text-decoration-line: underline; text-decoration-color:blue; text-decoration-style:wavy; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 20px;"
+            id="question"></p>
+
+ 
+
+        <input type="text" id="answer"> <br>
+        <input type="number" maxlength="4" required id="number"><br>
+        <input id="submit" type="submit" onclick="x()"><br>
+
+    </div>
+
+    <script>
+
+        let Admin = false
+
+        try {
+
+            disabled = document.getElementById('answer').remove()     //  tempory disable name filed 
+
+            let question = document.getElementById('question');
+
+            let a = Math.random() * 10000
+
+            a = Math.floor(a)
+
+            question.textContent = `You're Security Code =>` + a;
+
+            // when user press the button
+
+
+            function x() {
+                // validate the result
+
+                let number = document.getElementById('number').value;
+
+                if (number == a) {
+                    alert(`Congratulation. You're verfied Now  `)
+
+                    Admin  = true
+
+                    if(Admin)
+                    {
+                    document.getElementById('h1').textContent = 'Welcome Admin'
+                    }
+
+                }
+
+                else {
+                    alert('Incorrect Code!! Please Try Again Later')
+                    Admin = false
+                }
+
+            }
+
+        }
+
+
+        catch (e) {
+            console.log(e.message);
+
+
+        }
+
+let hash = location.hash;
+
+hash = hash.substr(1);
+
+title = document.getElementById('meta').innerHTML = atob(hash)
+
+    </script>
+
+
+    <style>
+        #container {
+            color: red;
+            border: 1px solid green;
+            padding: 10px;
+            text-align: center;
+            background-color: lawngreen;
+            border-style: dashed;
+            margin-top: 100px;
+            /* border-radius: 100px; */
+            /* width: 500px;
+    margin-left: 200px; */
+        }
+
+        #submit {
+            color: red;
+            border-radius: 100px;
+            font-family: cursive;
+            cursor: pointer;
+        }
+
+        #number {
+
+            cursor: progress;
+            border: 2px dashed blue;
+
+        }
+    </style>
+
+
+
+</body>
+
+</html>
