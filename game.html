@@ -320,3 +320,355 @@ THIS IS MY OLD CODE WHICH DOESN'T WORK FOR DETECTING THE COLLISION END IS HERE
 END OF TE CODE 
 !-->
 
+
+<!--
+
+
+IT'LL WORK :)
+
+!-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="car1.png" type="image/x-icon">
+    <title>Car Racing Game</title>
+</head>
+<body>
+
+    <p id="p"></p>
+
+    <h1>Car Racing Game</h1>
+
+    <div id="container">
+
+    <img id="car1" src="car1.png" alt="car1" srcset="">
+    <img id="car2" src="car2.jpg" alt="car2" srcset="">
+    <!-- <img id="road" src="road.png" alt="" srcset=""> -->
+</div>
+
+<style>
+#car1
+{
+    transform: rotate(180deg);
+    width: 150px;
+    height: 150px;
+    object-fit:cover;
+    margin-left: 380px;
+    margin-bottom: 900px;
+    position: relative;
+    bottom: 100px;
+    animation-name: car1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes car1 {
+
+0%
+{
+    top: 0px;
+}
+25%
+{
+    top:50px;
+}
+50%
+{
+    top: 100px;
+}
+70%
+{
+    top: 150px;
+}
+80%
+{
+    top: 200px;
+}
+100%{
+    top: 270px;
+}
+
+}
+
+#car2
+{
+   width: 100px;
+   height: 100px;
+   position: absolute;
+   right: 650px;
+   top: 500px
+   
+}
+
+.moving_car2_to_right
+{
+    animation-name: moving_car2_to_right;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes moving_car2_to_right {
+    0%
+    {
+
+    }
+    30%
+    {
+        right: 100px;
+    }
+
+    40%
+    {
+        right: 200px;
+    }
+    50%
+    {
+        right: 300px;
+    }
+    60%
+    {
+        right: 400px;
+    }
+    80%
+    {
+        right: 500px;
+    }
+    100%
+    {
+        right: 620px;
+    }
+}
+
+.moving_car2_to_left
+{
+    animation-name: moving_car2_to_left;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+}
+
+@keyframes moving_car2_to_left {
+    0%
+    {
+
+    }
+    20%
+    {
+        left: 50px;
+    }
+    30%
+    {
+        left: 100px;
+    }
+    40%
+    {
+        left: 150px;
+    }
+    50%
+    {
+        left: 200px;
+    }
+    80%
+    {
+        left: 250px;
+    }
+    100%
+    {
+        left: 300px;
+    }
+    
+}
+
+/* #road
+{
+    width: 100px;
+    height: 100px;
+
+} */
+
+/* body
+{
+background-image: url(road.png);
+background-repeat: no-repeat;
+background-size: cover;
+background-size: 1200px;
+} */
+
+#container
+{
+    border: 1px solid red;
+    width: 1000px;
+    height: 1000px;
+    margin: auto;
+    background-color:black;
+}
+
+</style>
+
+<script>
+
+
+
+window.onload = ()=>
+{
+
+
+
+window.addEventListener("keydown",(e)=>
+{
+
+
+
+if(e.key == "ArrowRight")
+{
+   car2  = document.getElementById("car2");
+
+//    car2.style.left = "700px";
+   car2.classList.add("moving_car2_to_right")
+
+setTimeout(()=>
+{
+car2.classList.remove("moving_car2_to_right")
+console.log(1)
+},3000)
+}
+else if(e.key == "ArrowLeft")
+{
+// car2.style.left = "470px";
+
+
+car2.classList.add("moving_car2_to_left")
+
+setTimeout(()=>
+{
+    car2.classList.remove("moving_car2_to_left")
+   console.log(1) 
+},3000)
+
+
+}
+
+
+
+
+
+
+})
+
+// randomly change the postion
+
+setInterval(()=>
+{
+//     postion = Math.ceil(Math.random()*450);
+
+// car1 = document.getElementById("car1").style.left =postion+"px";
+
+
+
+},1000)
+
+// detect collion
+
+setInterval(() => {
+    
+// offsetright = window.getComputedStyle(car2,null).getPropertyValue("right")
+
+// offsetright   = parseInt(offsetright)
+
+// console.log(offsetright =  Math.abs(offsetright))
+
+
+
+// offsettopcar1 = parseInt(window.getComputedStyle(car1,null).getPropertyValue("bottom"))
+
+// offsettopcar1 = Math.abs(offsettopcar1)
+
+// console.log("value of bottom ", offsettopcar1)
+
+// offsettopcar2 = parseInt(window.getComputedStyle(car2,null).getPropertyValue("top"));
+
+// offsettopcar2 = Math.ceil(offsettopcar2);
+
+// console.log("value of top ", offsettopcar2)
+
+
+// if(offsettopcar1+"px"==-210+"px" && offsettopcar2+"px"==490+"px")
+// {
+//  alert("Game Over")
+// }
+
+
+
+
+let car1 = document.getElementById("car1");
+
+car1 = car1.getBoundingClientRect();
+car2hai = car2.getBoundingClientRect();
+
+// console.log("x is=>",car1.left)
+// console.log("Top is =>",car1.top)
+
+
+let car1_x = car1.left;
+let car1_y = car1.top;
+
+let car2_x = car2hai.left;
+let car2_y = car2hai.top;
+
+
+
+let x = car1_x - car2_x;
+
+let y = car1_y - car2_y;
+
+x = Math.abs(x)
+y = Math.abs(y)
+
+x = Math.round(x)
+y= Math.round(y)
+
+let distance = Math.sqrt(Math.pow(x,2)+Math.pow(y,2))
+
+distance =  Math.ceil(distance)
+
+
+console.log("Total dostance ",distance)
+
+
+// p.innerHTML = distance
+
+
+
+if((distance == 156 || distance == 223 || distance == 422))
+{
+    alert("game over")
+}
+
+// setTimeout(()=>
+// {
+// x = document.getElementById("car1");
+
+// calculation = Math.random()*400-100;
+
+// calculation = Math.floor(calculation)
+
+// console.log(calculation)
+// x.style.left = calculation+"px";
+// },3000)
+
+
+},1000)
+
+}
+
+</script>
+
+
+
+</body>
+</html>
+
